@@ -1,16 +1,23 @@
 import java.util.HashMap;
+import com.google.gson.annotations.SerializedName;
 
 public class Device {
 	
 	private String type;
 	private String id;
-	private HashMap<String, String> characteristics; 
+	private String CharacteristicsName = "";
+	private HashMap<String, String> characteristics;
 	private HashMap<String, String> netlist;
 	
-	public Device(String type,String id,HashMap<String, String> characteristics) {
+	public Device(String type,String id,
+			HashMap<String, String> characteristics,
+			HashMap<String, String> netlist) {
+		
 		this.setType(type);
 		this.setId(id);
 		this.setCharacteristics(characteristics);
+		this.setNetlist(netlist);
+		
 	}
 
 	public String getType() {
@@ -29,6 +36,14 @@ public class Device {
 		this.id = id;
 	}
 
+	public HashMap<String, String> getNetlist() {
+		return netlist;
+	}
+
+	public void setNetlist(HashMap<String, String> netlist) {
+		this.netlist = netlist;
+	}
+
 	public HashMap<String, String> getCharacteristics() {
 		return characteristics;
 	}
@@ -37,12 +52,12 @@ public class Device {
 		this.characteristics = characteristics;
 	}
 
-	public HashMap<String, String> getNetlist() {
-		return netlist;
+	public String getCharacteristicsName() {
+		return CharacteristicsName;
 	}
 
-	public void setNetlist(HashMap<String, String> netlist) {
-		this.netlist = netlist;
+	public void setCharacteristicsName(String characteristicsName) {
+		CharacteristicsName = characteristicsName;
 	}
 
 }
