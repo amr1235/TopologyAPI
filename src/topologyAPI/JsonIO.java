@@ -1,3 +1,5 @@
+package topologyAPI;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.io.BufferedWriter;
@@ -7,23 +9,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import utils.Pair;
 
-//System.out.println(topology.getDevices().get(1).getType());
-//System.out.println(topology.getDevices().get(1).getId());
-//System.out.println(topology.getDevices().get(1).getCharacteristics());
-//System.out.println(topology.getDevices().get(1).getNetlist());
+import topologyAPI.utils.Pair;
 
-public class JsonIO {
+class JsonIO {
 
-	public JsonIO() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public static Topology ReadFromJson(String FilePath) throws IOException {
+	 static Topology ReadFromJson(String FilePath) throws IOException {
 		
 		String JsonString = new String(Files.readAllBytes(Paths.get(FilePath)));
 		Topology topology = new Gson().fromJson(JsonString, Topology.class);
@@ -47,7 +40,7 @@ public class JsonIO {
 		return topology;
 	}
 	
-	public static void WriteToJson(String FilePath,Topology topology) throws IOException {
+	static void WriteToJson(String FilePath,Topology topology) throws IOException {
 		String JsonString = getJsonStringFromTopology(topology);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(FilePath));
         writer.write(JsonString);
