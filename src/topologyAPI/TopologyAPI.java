@@ -13,7 +13,10 @@ public class TopologyAPI {
 		try {	
 			// convert JSON to Topology Object
 			Topology topology = JsonIO.ReadFromJson(FilePath);
-			
+			// check if the topology already exists 
+			if(findTopology(topology.getID()) != null) {
+				return;
+			}
 			// store the topology to the database
 			DataBase.topologies.add(topology);
 			

@@ -25,4 +25,22 @@ public class Topology {
 		this.components = components;
 	}
 	
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        Topology topology = (Topology) obj;
+        return id.equals(topology.getID()) &&
+                equalsComponents(topology.getComponents());
+    }
+
+    private boolean equalsComponents (ArrayList<Device> components) {
+        if (components.size() != this.components.size()) return false;
+        for (int i = 0; i < components.size(); ++i) {
+            if (!components.get(i).equals(this.components.get(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

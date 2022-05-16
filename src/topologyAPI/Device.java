@@ -3,6 +3,8 @@ package topologyAPI;
 import java.util.HashMap;
 import com.google.gson.annotations.SerializedName;
 
+import topologyAPI.utils.Equal;
+
 public class Device {
 	
 	private String type;
@@ -61,5 +63,16 @@ public class Device {
 	public void setCharacteristicsName(String characteristicsName) {
 		CharacteristicsName = characteristicsName;
 	}
+	
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        Device device = (Device) obj;
+        return type.equals(device.getType()) &&
+                id.equals(device.getId()) &&
+                Equal.EqualHash(characteristics,device.getCharacteristics()) &&
+                Equal.EqualHash(netlist,device.getNetlist());
+    }
 
 }

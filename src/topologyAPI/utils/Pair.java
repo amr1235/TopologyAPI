@@ -1,5 +1,7 @@
 package topologyAPI.utils;
 
+import java.util.HashMap;
+
 public class Pair<T1, T2> {
     private final T1 first;
     private final T2 second;

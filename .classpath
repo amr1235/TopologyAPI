@@ -8,5 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/amr/Downloads/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/amr/Downloads/jar_files/gson-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/amr/Downloads/junit-4.13.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/amr/Downloads/hamcrest-2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

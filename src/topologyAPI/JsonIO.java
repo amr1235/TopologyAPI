@@ -14,9 +14,9 @@ import com.google.gson.GsonBuilder;
 
 import topologyAPI.utils.Pair;
 
-class JsonIO {
+public class JsonIO {
 
-	 static Topology ReadFromJson(String FilePath) throws IOException {
+	 public static Topology ReadFromJson(String FilePath) throws IOException {
 		
 		String JsonString = new String(Files.readAllBytes(Paths.get(FilePath)));
 		Topology topology = new Gson().fromJson(JsonString, Topology.class);
@@ -40,7 +40,7 @@ class JsonIO {
 		return topology;
 	}
 	
-	static void WriteToJson(String FilePath,Topology topology) throws IOException {
+	public static void WriteToJson(String FilePath,Topology topology) throws IOException {
 		String JsonString = getJsonStringFromTopology(topology);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(FilePath));
         writer.write(JsonString);
