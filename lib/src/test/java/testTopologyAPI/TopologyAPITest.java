@@ -97,24 +97,24 @@ public class TopologyAPITest {
 	@Test
 	public void queryDevicesWithNetlistNodeTest() {
 		ArrayList<Device> TrueDevices = CreateRealDevices();
-		ArrayList<Device> CreatedDevices = TopologyAPI.queryDevicesWithNetlistNode("top1","n1");
+		ArrayList<Device> CreatedDevices = TopologyAPI.queryDevicesWithNetListNode("top1","n1");
 		// test getting the two devices that are common in n1
 		assertEquals(TrueDevices.equals(CreatedDevices),true);
 		// test getting one device with v1 node
 		Device TrueDevice = CreateRealDevices().get(0);
-		CreatedDevices = TopologyAPI.queryDevicesWithNetlistNode("top1","vdd");
+		CreatedDevices = TopologyAPI.queryDevicesWithNetListNode("top1","vdd");
 		assertEquals((CreatedDevices.size() == 1) && 
 				(TrueDevice.equals(CreatedDevices.get(0))),true);
 		// test getting one device with vin node
 		TrueDevice = CreateRealDevices().get(1);
-		CreatedDevices = TopologyAPI.queryDevicesWithNetlistNode("top1","vin");
+		CreatedDevices = TopologyAPI.queryDevicesWithNetListNode("top1","vin");
 		assertEquals((CreatedDevices.size() == 1) && 
 				(TrueDevice.equals(CreatedDevices.get(0))),true);
 		// test enter not existing node
-		CreatedDevices = TopologyAPI.queryDevicesWithNetlistNode("top1","emf");
+		CreatedDevices = TopologyAPI.queryDevicesWithNetListNode("top1","emf");
 		assertEquals(CreatedDevices.size(),0);
 		// test enter not existing topologyId
-		CreatedDevices = TopologyAPI.queryDevicesWithNetlistNode("top55","emf");
+		CreatedDevices = TopologyAPI.queryDevicesWithNetListNode("top55","emf");
 		assertEquals(CreatedDevices,null);
 	}
 	private boolean testIds() throws IOException {

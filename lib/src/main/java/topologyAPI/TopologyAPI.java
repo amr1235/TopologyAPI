@@ -51,7 +51,7 @@ public class TopologyAPI {
 				System.out.println(e);
 			}
 		}else {
-			System.out.println("Toplogy Not Found...");
+			System.out.println("Topology Not Found...");
 		}
 	}
 	
@@ -61,19 +61,19 @@ public class TopologyAPI {
 		if(topology != null) {
 			return topology.getComponents();
 		}else {
-			System.out.println("Toplogy Not Found...");
+			System.out.println("Topology Not Found...");
 			return null;
 		}
 	}
 	
 	// Query about which devices are connected to a given netlist node in a given topology
-	public static ArrayList<Device> queryDevicesWithNetlistNode(String TopologyId,String NetlistNodeID) {
+	public static ArrayList<Device> queryDevicesWithNetListNode(String TopologyId,String NetListNodeID) {
 		
 		Topology topology = findTopology(TopologyId);
 		if(topology != null) {
-			return findDevicesWithTheSameNode(topology,NetlistNodeID);
+			return findDevicesWithTheSameNode(topology,NetListNodeID);
 		}else {
-			System.out.println("Toplogy Not Found...");
+			System.out.println("Topology Not Found...");
 			return null;
 		}
 		
