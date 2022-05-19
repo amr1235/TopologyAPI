@@ -18,12 +18,13 @@ import topologyAPI.TopologyAPI;
 public class TopologyAPITest {
 	
 	private void setupTopologies() throws IOException {
-		String initPath = "src/testTopologyAPI/testJSONS/";
+		String initPath = "src/test/java/testTopologyAPI/testJSONS/";
 		String JSONFiles[] = {"topology.json","topology2.json","topology3.json",
 							  "topology4.json","topology5.json"};
 		for (int i = 0; i < JSONFiles.length; i++) {			
 			File file = new File(initPath + JSONFiles[i]);
 			String path = file.getAbsolutePath();
+			// System.out.println(path);
 			TopologyAPI.readJSON(path);
 		}
 	}
@@ -33,7 +34,7 @@ public class TopologyAPITest {
 		setupTopologies();
 		//check id's
 		assertEquals(testIds(), true);
-		//check components
+		// // //check components
 		assertEquals(testComponents(), true);
 
 	}
@@ -46,7 +47,7 @@ public class TopologyAPITest {
 	
 	@Test 
 	public void writeJSONTest() throws IOException {
-		String initPath = "src/testTopologyAPI/testJSONS/";
+		String initPath = "src/test/java/testTopologyAPI/testJSONS/";
 		String JSONFiles[] = {"CreatedTopology.json","CreatedTopology2.json",
 							  "CreatedTopology3.json",
 							  "CreatedTopology4.json","CreatedTopology5.json"};

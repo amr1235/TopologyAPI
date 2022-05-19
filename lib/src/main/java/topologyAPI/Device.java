@@ -1,7 +1,7 @@
 package topologyAPI;
 
 import java.util.HashMap;
-import com.google.gson.annotations.SerializedName;
+
 
 import topologyAPI.utils.Equal;
 
